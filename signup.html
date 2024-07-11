@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/signup.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <!--- Header --->
+
+    <header class="header" id="header">
+        <img src="img/Moments.png" class="logo"></img>
+        <h1>Moments Cafe</h1>
+        
+        <input type="checkbox" id="check">
+        <label for="check" class="icons">
+            <i class='bx bx-menu' id="menu-icon"></i>
+            <i class='bx bx-x' id="close-icon"></i>
+        </label>
+
+        <nav class="navbar">
+            <a href="index2.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="aboutus.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!--- Header End --->
+
+    <div class="container">
+        
+        <div class="right">
+            
+            <h2> Signup </h2> 
+            
+            <form id="form">
+                
+                <label for="username"><b id="bold"> Username : </b></label>
+                <input type="text" id="username" name="username" placeholder="Enter Username " required>
+                <br>
+                <label for="email"><b id="bold"> E-mail : </b></label>
+                <input id="email"  type="email" name="email" placeholder="Enter Email " required>
+                <br>
+                <label for="password"><b id="bold"> Password : </b></label>
+                <input id="password" type="password" name="password" placeholder="Enter password " required>
+                <br>
+                <label for="confirm-password"><b id="bold"> Confirm Password : </b></label>
+                <input id="confirm-password" type="password" name="confirm-password" placeholder="Confirm password " required>
+                <br>
+                <button type="submit"><b id="bold2"> Signup </b></button>
+                <br>
+                <p>Already have an account ? <a href="login.html"> Login </a> </p>
+            </form>
+        
+        </div>
+        
+        <div class="left">
+            <img src="img/about1.jpg" alt="image" id="image">
+        </div>
+
+    </div>
+
+    <!--- Footer --->
+
+    <footer class="footer">
+        <div class="part1footer">
+            <div class="fp1">
+                <h3>Location</h3>
+                <p>500 / A.R.MALL, Panvel point, Mota Varachha,<br> Surat.</p>
+            </div>
+            <div class="fp1">
+                <h3>Opening Hours</h3>
+                <p>Monday-Thursday : 11am-9pm</p>
+                <p>Friday-Saturday : 11am-11pm</p>
+                <p>Sunday : 4pm -9pm</p>
+            </div>
+        </div>
+        <div class="part2footer">
+            <h3>© Copyright 2004 Moments Cafe. All Rights Reserved.</h3>
+        </div>
+    </footer>
+
+    <!--- Footer End --->
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const form = document.getElementById("form");
+        const password = document.getElementById("password");
+        const confirmPassword = document.getElementById("confirm-password");
+
+        function validatePasswords() {
+            if (password.value !== confirmPassword.value) {
+                confirmPassword.setCustomValidity("Passwords do not match");
+            } else {
+                confirmPassword.setCustomValidity("");
+            }
+        }
+
+        password.addEventListener("input", validatePasswords);
+        confirmPassword.addEventListener("input", validatePasswords);
+
+        form.addEventListener("submit", function(event) {
+            validatePasswords();
+            if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+            } else {
+                event.preventDefault(); // Prevent the default form submission
+                window.location.href = "index2.html"; // Redirect to home page
+            }
+        });
+    });
+    </script>
+</body>
+</html>

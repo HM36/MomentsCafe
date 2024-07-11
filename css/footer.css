@@ -1,0 +1,26 @@
+.part1footer{
+    display: flex;
+    margin-top: 40px;
+    background: #6F4E37;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+}
+.fp1{
+    padding: 3%;
+}
+.fp1 h3{
+    color: aliceblue;
+}
+.fp1 p{
+    color: #feb46a;
+}
+.part2footer{
+    background: #6F4E37;
+    margin-top: 1px;
+    padding: 20px;
+}
+.part2footer h3{
+    text-align: center;
+    color: #feb46a;
+}
